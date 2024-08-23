@@ -67,67 +67,67 @@
     overflow: auto;
   }
   
-  /* Modal Styling */
+ 
 .nz-modal {
   .ant-modal-content {
-    border-radius: 8px; /* Rounded corners for the modal */
+    border-radius: 8px; 
   }
 
   .ant-modal-header {
-    background-color: #f0f2f5; /* Light background for the header */
-    border-bottom: 1px solid #e1e1e1; /* Border at the bottom of the header */
+    background-color: #f0f2f5; 
+    border-bottom: 1px solid #e1e1e1; 
   }
 
   .ant-modal-title {
-    color: #333; /* Dark color for the title text */
+    color: #333; 
   }
 
   .ant-modal-close {
-    color: #007bff; /* Color for the close button */
+    color: #007bff; 
   }
 
   .ant-modal-footer {
     display: flex;
-    justify-content: flex-end; /* Align footer buttons to the right */
+    justify-content: flex-end; 
   }
 }
 
 /* Table Styling */
 nz-table {
-  border-radius: 8px; /* Rounded corners for the table */
-  overflow: hidden; /* Ensure content doesn't overflow */
+  border-radius: 8px; 
+  overflow: hidden; 
 }
 
 .ant-table-thead > tr > th {
-  background-color: #f5f5f5; /* Light background for table headers */
-  color: #333; /* Dark color for header text */
-  font-weight: bold; /* Bold text for headers */
-  text-align: left; /* Align text to the left */
-  padding: 12px 16px; /* Padding for headers */
+  background-color: #f5f5f5; 
+  color: #333; 
+  font-weight: bold; 
+  text-align: left; 
+  padding: 12px 16px; 
 }
 
 .ant-table-tbody > tr > td {
-  padding: 12px 16px; /* Padding for table cells */
+  padding: 12px 16px; 
 }
 
 .ant-table-tbody > tr > td img {
-  border-radius: 4px; /* Rounded corners for images */
-  object-fit: cover; /* Ensure image covers the area without distortion */
+  border-radius: 4px; 
+  object-fit: cover; 
 }
 
 .ant-table-tbody > tr > td button {
-  border-radius: 4px; /* Rounded corners for buttons */
+  border-radius: 4px; 
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
   .nz-modal {
     .ant-modal-content {
-      width: 100%; /* Full width on smaller screens */
+      width: 100%; 
     }
   }
 
   nz-table {
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 14px; 
   }
 }
