@@ -5,18 +5,18 @@
 
 .content-container {
   flex-grow: 1;
-  padding-left: 250px; /* Same as sidebar width */
+  padding-left: 250px; 
   background-color: #f4f4f4;
   overflow-y: auto;
 }
 .main-container {
   display: flex;
-  margin-top: 60px; /* Adjusted for Navbar height */
+  margin-top: 60px; 
 }
 
 .content-container {
   flex-grow: 1;
-  padding-left: 250px; /* Same as sidebar width */
+  padding-left: 250px; 
   background-color: #f4f4f4;
   overflow-y: auto;
 }
