@@ -16,9 +16,7 @@ export class CompareProductsComponent {
   constructor(public productService: ProductService) {
     this.productService.getProducts().subscribe((data) => {
       this.products = data.products;
-      console.log(this.products);
     });
-    // Assume the compared products are passed via service
     this.compareProducts = this.productService.getComparedProducts();
     this.productLenght = this.productService.compareProducts;
   }
@@ -56,7 +54,6 @@ export class CompareProductsComponent {
     this.productService.getProducts().subscribe((data) => {
       this.products = data.products;
     });
-    console.log(this.products);
     this.isModalVisible = true;
   }
 }
