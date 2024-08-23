@@ -1,0 +1,115 @@
+<div class="compare-container">
+  <button
+    nz-button
+    nzType="primary"
+    class="add-more-btn"
+    (click)="addMoreProducts()"
+    [disabled]="productLenght.length > 3"
+  >
+    {{ productLenght.length > 0 ? " Add More Product" : "Add Products" }}
+  </button>
+  <table class="compare-table" *ngIf="compareProducts.length > 0">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th *ngFor="let product of compareProducts">{{ product.title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Image</td>
+        <td *ngFor="let product of compareProducts">
+          <img [src]="product.thumbnail" alt="{{ product.title }}" />
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td *ngFor="let product of compareProducts">
+          {{ product.price | currency }}
+        </td>
+      </tr>
+      <tr>
+        <td>Brand</td>
+        <td *ngFor="let product of compareProducts">{{ product.brand }}</td>
+      </tr>
+      <tr>
+        <td>Category</td>
+        <td *ngFor="let product of compareProducts">{{ product.category }}</td>
+      </tr>
+      <tr>
+        <td>Discount</td>
+        <td *ngFor="let product of compareProducts">
+          {{ product.discountPercentage }}%
+        </td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td *ngFor="let product of compareProducts">
+          {{ product.description }}
+        </td>
+      </tr>
+      <tr>
+        <td>Actions</td>
+        <td *ngFor="let product of compareProducts">
+          <button nz-button nzType="danger" (click)="removeProduct(product)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<nz-modal
+  [nzWidth]="1200"
+  [(nzVisible)]="isModalVisible"
+  nzTitle="Add More Products"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+>
+  <ng-container *nzModalContent>
+    <nz-table #basicTable [nzData]="products" [nzPageSize]="10">
+      <thead>
+        <tr>
+          <th nzWidth="25%">Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Discount Percentage</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Compare</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of basicTable.data">
+          <td>{{ product.title }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency }}</td>
+          <!-- Optional: use currency pipe for price -->
+          <td>{{ product.discountPercentage }}%</td>
+          <td>{{ product.brand }}</td>
+          <td>{{ product.category }}</td>
+          <td>
+            <img
+              [src]="product.thumbnail"
+              alt="{{ product.title }}"
+              width="50"
+            />
+          </td>
+          <td>
+            <button
+              class="add-more-btn"
+              nz-button
+              nzType="primary"
+              (click)="addProductToCompare(product)"
+              [disabled]="isProductInCompare(product)"
+            >
+              Compare
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</nz-modal>

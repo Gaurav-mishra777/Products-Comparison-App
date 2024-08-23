@@ -1,0 +1,39 @@
+<nz-table class="table" #basicTable [nzData]="products" [nzPageSize]="10">
+  <thead>
+    <tr>
+      <th nzWidth="25%">Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Discount Percentage</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th>Image</th>
+      <th>Compare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of basicTable.data">
+      <td>{{ product.title }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.discountPercentage }}%</td>
+      <td>{{ product.brand }}</td>
+      <td>{{ product.category }}</td>
+      <td>
+        <img [src]="product.thumbnail" alt="{{ product.title }}" width="50" />
+      </td>
+      <td>
+        <button
+          class="compareButton"
+          nz-button
+          nzType="primary"
+          (click)="addToCompare(product)"
+          [disabled]="isProductInCompare(product)"
+          routerLink="/compare-products"
+        >
+          Compare
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

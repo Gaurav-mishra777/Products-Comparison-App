@@ -1,0 +1,23 @@
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content-container {
+  flex-grow: 1;
+  padding-left: 250px; /* Same as sidebar width */
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+.main-container {
+  display: flex;
+  margin-top: 60px; /* Adjusted for Navbar height */
+}
+
+.content-container {
+  flex-grow: 1;
+  padding-left: 250px; /* Same as sidebar width */
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+

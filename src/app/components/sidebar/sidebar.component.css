@@ -1,0 +1,42 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+  }
+  
+  .sidebar-header {
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  .sidebar-menu {
+    flex-grow: 1;
+  }
+  
+  .sidebar-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-menu a:hover {
+    background-color: #555;
+  }
+  
+  .active-menu-item {
+    background-color: #555;
+  }
+  
