@@ -92,7 +92,7 @@
   }
 }
 
-/* Table Styling */
+
 nz-table {
   border-radius: 8px; 
   overflow: hidden; 
@@ -119,7 +119,7 @@ nz-table {
   border-radius: 4px; 
 }
 
-/* Responsive Styling */
+
 @media (max-width: 768px) {
   .nz-modal {
     .ant-modal-content {
